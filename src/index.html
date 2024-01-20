@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pageshopetech</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+
+<body>
+    <nav class="py-9 px-4" x-data="{navOpen : true}">
+        <div class="container mx-auto ">
+            <div class="flex items-center justify-between">
+
+                <div class="flex items-center order-1 sm:order-2">
+                    <img src="../public/image/ps.svg " alt=" " class="w-12 ">
+                    <h1 class="text-[1.5rem] font-bold text-blue-600">Pageshop<span class="text-orange">tech</span></h1>
+                </div>
+                <div @click="navOpen = !navOpen" class="bg-blue-600  h-[2rem] px-2 flex justify-center items-center rounded-[8px] text-white order-2 sm:order-1 lg:hidden">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="order-2 hidden lg:block">
+                    <ul class="flex gap-8">
+                        <li class="font-bold text-grey text-sm font-circular"><a href="">Home</a></li>
+                        <li class="font-bold text-grey text-sm font-circular"><a href="">News</a></li>
+                        <li class="font-bold text-grey text-sm font-circular"><a href="">Gallery</a></li>
+                        <li class="font-bold text-grey text-sm font-circular"><a href="">About</a></li>
+                        <li class="font-bold text-grey text-sm font-circular"><a href="">Product</a></li>
+                    </ul>
+                </div>
+                <div class="order-3 hidden sm:block">
+                    <button class="grow bg-white px-5 py-3 text-grey text-sm rounded-full font-bold">Login</button>
+                    <button class="grow bg-blue-800 px-5 py-3 text-sm text-white rounded-full font-bold">Sign Up</button>
+                </div>
+            </div>
+        </div>
+        <div x-show="navOpen" x-data="{ open: false }" class="fixed bottom-0 right-0 left-0  border bg-white z-50 p-4 lg:hidden" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
+            <ul class="flex justify-evenly">
+
+                <li>
+                    <button class="flex justify-center flex-col items-center text-base gap-1">
+                        <ion-icon name="server-outline" class="text-grey opacity-50 text-2xl"></ion-icon>
+                        <span class="text-base font-bold text-grey">Product</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex justify-center flex-col items-center text-base gap-1">
+                        <ion-icon name="megaphone-outline" class="text-grey opacity-50 text-2xl"></ion-icon>
+                        <span class="text-base font-bold text-grey">News</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex justify-center flex-col items-center text-base gap-1">
+                        <ion-icon name="home-outline" class="text-grey text-2xl opacity-50 "></ion-icon>
+                        <span class="text-base font-bold text-blue-800">Home</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex justify-center flex-col items-center text-base gap-1">
+                        <ion-icon name="image-outline" class="text-grey opacity-50 text-2xl"></ion-icon>
+                        <span class="text-base font-bold text-grey">Gallery</span>
+                    </button>
+                </li>
+                <li>
+                    <button @click="open = !open" class="flex justify-center flex-col items-center text-base gap-1">
+                        <ion-icon name="image-outline" class="text-grey opacity-50 text-2xl"></ion-icon>
+                        <span class="text-base font-bold text-grey">About</span>
+                    </button>
+                </li>
+
+            </ul>
+
+            <div x-show="open" class="absolute bottom-28 left-1/2 -translate-x-1/2 flex gap-4" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
+                <button class="grow bg-white px-5 py-3 text-grey text-sm rounded-full font-bold">Login</button>
+                <button class="grow bg-blue-800 px-5 py-3 text-sm text-white rounded-full font-bold">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section>
+        <div class="container mx-auto px-4 py-4 lg:py-6">
+            <div class="grid grid-cols-12 items-center">
+                <div class="col-span-12 lg:col-span-4 lg:order-1 order-2">
+                    <button class="text-orange px-8 py-4 bg-white text-sm font-bold shadow drop-shadow-sm-shadow rounded-full flex justify-center items-center lg:justify-start">
+                        Explore the world!
+                        <ion-icon name="grid-outline" class="text-[1.2rem]"></ion-icon>
+                    </button>
+                    <h1 class="font-bold text-[40px] leading-tight text-center mt-4 md:text-[56px] lg:text-start">
+                        Travel <span class="text-orange">top destination</span> of the world
+                    </h1>
+                    <p class="text-center text-gray-400 mt-4 mb-6 lg:w-full md:w-1/2 mx-auto lg:text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iste facilis, architecto autem odit reprehenderit molestiae sequi sunt quae exercitationem.</p>
+                    <div class="flex flex-col md:flex-row justify-center gap-3 mt-4 lg:justify-start">
+                        <button class="py-4 px-8 bg-ungu shadow drop-shadow-lg rounded-full font-bold text-sm text-white">Get Started</button>
+                        <button class="py-4 px-8  border rounded-full text-sm font-bold flex items-center justify-center">Watch Demo <span class="text-ungu text-[2rem]"><ion-icon name="caret-forward-circle-outline"></ion-icon></span></button>
+                    </div>
+                </div>
+                <div class="col-span-12 lg:col-span-8 lg:order-2 order-1 text-center flex justify-center">
+                    <div class="">
+                        <img src="../public/image/5024147-removebg-preview.png" class="w-full" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 order-3 py-8 ">
+                <div>
+                    <div class="flex  justify-center gap-5 sm:gap-7 lg:justify-between flex-wrap">
+                        <img src="../public/image/logo/logoipsum-290.svg" class="h-5 sm:h-8 " alt="">
+                        <img src="../public/image/logo/logoipsum-233.svg" class="h-5 sm:h-8 " alt="">
+                        <img src="../public/image/logo/logoipsum-280.svg" class="h-5 sm:h-8 " alt="">
+                        <img src="../public/image/logo/logoipsum-286.svg" class="h-5 sm:h-8 " alt="">
+                        <img src="../public/image/logo/logoipsum-260.svg" class="h-5 sm:h-8 " alt="">
+                        <img src="../public/image/logo/logoipsum-232.svg" class="h-5 sm:h-8 " alt="">
+                        <img src="../public/image/logo/logoipsum-260.svg" class="h-5 sm:h-8 " alt="">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- service section -->
+    <section class="py-16 overflow-x-hidden">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-12">
+                <div class="col-span-4 flex-col gap-4">
+                    <span class="text-orange font-bold leading-tight">SERVICE</span>
+                    <h1 class="font-bold text-3xl leading-tight text-grey">Lorem ipsum dolor sit amet.</h1>
+                </div>
+                <div class="col-span-8 flex gap-5 w-screen">
+                    <div class="flex gap-4 flex-col justify-center w-[350px] rounded p-4 border">
+                        <img src="../public/image/logo/logoipsum-232.svg" class="h-6" alt="">
+                        <h2 class="font-bold text-lg text-center">Best Tour Guide</h2>
+                        <p class="font-inter text-lg leading-relaxed text-grey opacity-50 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, cumque.</p>
+                    </div>
+                    <div class="flex gap-4 flex-col justify-center w-[350px] rounded p-4 border">
+                        <img src="../public/image/logo/logoipsum-232.svg" class="h-6" alt="">
+                        <h2 class="font-bold text-lg text-center">Best Tour Guide</h2>
+                        <p class="font-inter text-lg leading-relaxed text-grey opacity-50 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, cumque.</p>
+                    </div>
+                    <div class="flex gap-4 flex-col justify-center w-[350px] rounded p-4 border">
+                        <img src="../public/image/logo/logoipsum-232.svg" class="h-6" alt="">
+                        <h2 class="font-bold text-lg text-center">Best Tour Guide</h2>
+                        <p class="font-inter text-lg leading-relaxed text-grey opacity-50 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, cumque.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+</body>
+
+</html>

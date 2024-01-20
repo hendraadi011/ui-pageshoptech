@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    @font-face {
+        font-family: 'circular Std';
+        src: url('../public/font/circular-std-medium-500.ttf');
+    }
+    html {
+        font-family: inter;
+    }
+    h1 {
+        font-family: 'circular Std';
+    }
+}
